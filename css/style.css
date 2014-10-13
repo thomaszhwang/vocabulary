@@ -5,33 +5,39 @@ body {
 
 #count-box {
     position: absolute;
-    border:1px solid #ffffff;
-    border-radius: 7px;
-    top: 25%;
-    width:70px;
-    height:120px;
-    border-left-style: none;
-    margin-left:-14px;
+    top: 20%;
+    left: 1%;
+    width:120px;
+    height:150px;
+    
 }
     
 
- #progress_correct_count {
-    font-size: 20px;
+#progress_correct_count {
+    height:70px;
+    font-size: 19px;
     color: green;
-    padding:0;
     text-decoration: none;
-    margin-top:15px;
-    margin-left:20px; 
+    text-align: center;
+    padding-top: 25px;
+    background-size:120px 95px;
+    background-image: url("../img/correct.png");
+    background-repeat:no-repeat;
   
 }
 
- #progress_wrong_count {
-    margin-top:35px;
-    font-size: 20px;
+#progress_wrong_count {
+    margin-top:20px;
+    height:75px;
+    font-size: 19px;
     color: red;
     text-decoration: none;
-    padding:0;
-    margin-left:20px;
+    text-align: center;
+    padding-top: 24px;
+    background-size:120px 95px;
+    background-image: url("../img/in.png");
+    background-repeat:no-repeat;
+
 }
 
 .nav_top a {

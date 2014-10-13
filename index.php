@@ -14,6 +14,7 @@ if(!$u->isLoggedIn()) {
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"
             charset="utf-8"></script>
         <script src="main.js" charset="utf-8"></script>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         <div id="nav_left" class="nav_top">
@@ -31,8 +32,8 @@ if(!$u->isLoggedIn()) {
         </div>
     
         <div id="count-box">
-            <li id="progress_correct_count"></li>
-            <li id="progress_wrong_count"></li>
+            <div id="progress_correct_count"></div>
+            <div id="progress_wrong_count"></div>
         </div>
         
         <div id="word_display_div">
