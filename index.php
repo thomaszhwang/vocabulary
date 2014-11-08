@@ -13,7 +13,7 @@ if(!$u->isLoggedIn()) {
         <title>Vocabulary GoBanana Today!</title>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"
             charset="utf-8"></script>
-        <script src="main.js" charset="utf-8"></script>
+        <script src="js/main.js" charset="utf-8"></script>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
     </head>
     <body>

@@ -3,7 +3,7 @@
 session_start();
 if (!isset($_SESSION['user_id'])) die();
 
-const MYSQL_SERVER = 'localhost';
+const MYSQL_SERVER = '127.0.0.1';
 const MYSQL_USER = 'vocabulary';
 const MYSQL_PSWD = 'Gg44gG77';
 const MYSQL_DB = 'scopetrack';
