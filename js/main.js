@@ -78,3 +78,11 @@ function get_today() {
  
     return yyyy + '-' + mm + '-' + dd + ' ' + hh + ':00';
 }
+
+function enter_new_word(new_word) {
+    $('#txt_new_voc').val('');
+    
+    $.get('db.php?qtype=new&word=' + new_word, function() {
+        $('#new_voc_dia ul').prepend("<li>" + new_word + "</li>")
+    });
+}

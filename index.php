@@ -15,11 +15,12 @@ if(!$u->isLoggedIn()) {
             charset="utf-8"></script>
         <script src="js/main.js" charset="utf-8"></script>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="css/new_vocabulary.css"/>
     </head>
     <body>
         <div id="nav_left" class="nav_top">
             <ul>
-                <li><a href="#">New Vocabulary</a></li>
+                <li><a href="#" onclick="$('#new_voc_dia').show();">New Vocabulary</a></li>
                 <li><a href="#">Statistics</a></li>
             </ul>
         </div>
@@ -44,6 +45,21 @@ if(!$u->isLoggedIn()) {
         <div id="button_group">
             <div id="check_button" class="check_button">✔</div>
             <div id="cross_button" class="check_button">✗</div>
+        </div>
+
+        <div id="new_voc_dia">
+            <div id="new_voc_dia_tri"></div>
+            <a href="#"><img id="new_voc_dia_close"
+                src="img/cross.png"
+                onclick="$('#new_voc_dia').hide();"/></a>
+
+            <input id="txt_new_voc"
+                type="text"
+                placeholder=" type in new word and hit enter..."
+                onkeydown="if (event.keyCode ==  13) enter_new_word($('#txt_new_voc').val());">
+            <ul>
+                <li>ddd</li>
+            </ul>
         </div>
     </body>
 </html>
