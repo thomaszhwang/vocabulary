@@ -1,0 +1,35 @@
+#new_voc_dia{
+    width:300px;
+    height:200px;
+    border-radius:4px;
+    background:#6d7083;
+    
+    position:fixed;
+    top:40px;
+    left:30px;
+}
+
+#new_voc_dia_tri{
+    position:absolute;
+    top:-8px;
+    left:15px;
+    width:0;
+    border-top:12x solid transparent;
+    border-right:12px solid transparent;
+    border-bottom:12px solid #6d7083;
+    border-left:12px solid transparent;
+}
+
+#new_voc_dia_close {
+    position:absolute;
+    top: -8px;
+    left: 294px;
+    width:15px;
+    height:15px;
+}
+
+#txt_new_voc {
+    width: 273px;
+    height: 18px;
+    margin: 10px;
+}

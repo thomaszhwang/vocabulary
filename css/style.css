@@ -1,5 +1,5 @@
 body {
-    background-color: #292929;
+    background-color: #47485c;
     font-family: 'Abel', sans-serif;
 }
 
@@ -11,7 +11,6 @@ body {
     height:150px;
     
 }
-    
 
 #progress_correct_count {
     height:70px;
