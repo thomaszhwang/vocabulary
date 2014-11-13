@@ -20,11 +20,11 @@ if(isset($_POST['submitted'])) {
             <input type='hidden' name='submitted' id='submitted' value='1'/>
             <p>
                 <label for="login">Email:</label>
-                <input type="text" name="user_email" value="thomas@zh-wang.me">
+                <input type="text" name="user_email" value="">
             </p>
             <p>
                 <label for="password">Password:</label>
-                <input type="password" name="password" value="123">
+                <input type="password" name="password" value="">
             </p>
             <p>
                 <button type="submit">Login</button>
