@@ -16,6 +16,7 @@ if(isset($_POST['submitted'])) {
         echo $u->err_msg;
     ?>
     <div>
+        <p>Welcome to Vocabulary Go Banana!</p>
         <form method="post" action="login.php">
             <input type='hidden' name='submitted' id='submitted' value='1'/>
             <p>
