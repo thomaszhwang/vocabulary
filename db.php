@@ -13,18 +13,18 @@ if(isset($_GET['qtype']) == false) die('no qtype');
 switch ($_GET['qtype']) {
     case "new":
         if(isset($_GET['word']))
-            new_word(1, trim(strtolower($_GET['word'])));
+            new_word($_SESSION['user_id'], trim(strtolower($_GET['word'])));
         break;
     case "memorize":
         if(isset($_GET['word']) && isset($_GET['is_correct']))
-            memorize(1, trim(strtolower($_GET['word'])), $_GET['is_correct']);
+            memorize($_SESSION['user_id'], trim(strtolower($_GET['word'])), $_GET['is_correct']);
         break;
     case "next":
-        echo next_word(1);
+        echo next_word($_SESSION['user_id']);
         break;
     case "progress":
         if(isset($_GET['start_time']))
-            echo count_progress(1, $_GET['start_time']);
+            echo count_progress($_SESSION['user_id'], $_GET['start_time']);
         break;
     default:
         echo "no qtype";
