@@ -1,0 +1,86 @@
+
+*{margin:0;padding:0;}
+
+body {
+	background-color:#47485c;
+	font-family: "Abel",sans-serif;
+}
+
+#login{
+  width:400px;
+  height:500px;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+  margin: -50px 0px 0px -200px;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+ 
+}
+
+
+
+
+form{
+  background:#f0f0f0;
+  padding:14% 4%;
+  
+}
+
+input[type="email"],input[type="password"]{
+  width:92%;
+  background:#fff;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4%;
+  font-size:95%;
+  color:#555;
+}
+
+
+
+input[type="submit"]:hover{
+  background:#6d7083;
+
+}
+
+#submit {
+  float:left;
+  width:40%;
+  background:#d75931;
+  border:0;
+  padding:3%;
+  font-size:100%;
+  color:#fff;
+  cursor:pointer;
+}
+
+#three-things a {
+	font-size:12px;
+	float:right;
+	cursor:pointer;
+	margin-top:20px;
+	line-height: 35px;
+	margin-left: 10px;
+}
+#remember_me {
+cursor: pointer;
+font-size: 12px;
+margin-left:26px;
+margin-top:5px;
+position:absolute;
+
+}
+
+#keep-box {
+	font-size:12px;
+	position:absolute;
+	cursor:pointer;
+	margin-left:190px;
+	margin-top:5px;
+	color:#777;
+}
+
+.style-f {
+	 text-decoration: none;
+}

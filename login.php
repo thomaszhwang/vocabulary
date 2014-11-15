@@ -10,27 +10,32 @@ if(isset($_POST['submitted'])) {
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="css/login.css"/>
 </head>
+
 <body>
     <?PHP
         echo $u->err_msg;
     ?>
-    <div>
-        <p>Welcome to Vocabulary Go Banana!</p>
-        <form method="post" action="login.php">
-            <input type='hidden' name='submitted' id='submitted' value='1'/>
-            <p>
-                <label for="login">Email:</label>
-                <input type="text" name="user_email" value="">
-            </p>
-            <p>
-                <label for="password">Password:</label>
-                <input type="password" name="password" value="">
-            </p>
-            <p>
-                <button type="submit">Login</button>
-            </p>
-        </form>
+    <div id="login">
+
+    <form method="post" action="login.php">
+        <input type="hidden" name='submitted' id='submitted' value='1'/>
+        <input type="email" placeholder="Email" name="user_email"/>
+        <input type="password" placeholder="Password" name="password"/>
+        <div id="three-things">
+        <input id="submit" type="submit" value="Log in" />
+        
+        <label>
+         <input id="remember_me" type="checkbox" name="remember_me"></input>
+            <p id="keep-box">Remember me on this computer…<p>
+            <a class="style-f" href="">Forgot your password?</a>
+            <a class="style-f" href="">Register</a>
+        </label>
+        </div>
+    </form>
+    
+    
     </div>
 </body>
 </html>
