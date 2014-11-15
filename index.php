@@ -55,11 +55,10 @@ if(!$u->isLoggedIn()) {
 
             <input id="txt_new_voc"
                 type="text"
+                maxlength="25"
                 placeholder=" type in new word and hit enter..."
                 onkeydown="if (event.keyCode ==  13) enter_new_word($('#txt_new_voc').val());">
-            <ul>
-                <li>ddd</li>
-            </ul>
+            <ul></ul>
         </div>
     </body>
 </html>
