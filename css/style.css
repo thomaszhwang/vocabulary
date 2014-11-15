@@ -6,7 +6,7 @@ body {
 #count-box {
     position: absolute;
     top: 20%;
-    left: 1%;
+    right: 1%;
     width:120px;
     height:150px;
     

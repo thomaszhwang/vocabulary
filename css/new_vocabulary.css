@@ -33,3 +33,17 @@
     height: 18px;
     margin: 10px;
 }
+
+#new_voc_dia li {
+    list-style-type: none;
+    font-size:16px;
+    color:#cccccc;
+    margin-top:20px;
+}
+
+.new_trash_click img {
+    width:15px;
+    height:15px;
+    float:right;
+    margin-right:45px;
+}
