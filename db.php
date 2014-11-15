@@ -13,18 +13,22 @@ if(isset($_GET['qtype']) == false) die('no qtype');
 switch ($_GET['qtype']) {
     case "new":
         if(isset($_GET['word']))
-            new_word(1, trim(strtolower($_GET['word'])));
+            new_word($_SESSION['user_id'], trim(strtolower($_GET['word'])));
         break;
     case "memorize":
         if(isset($_GET['word']) && isset($_GET['is_correct']))
-            memorize(1, trim(strtolower($_GET['word'])), $_GET['is_correct']);
+            memorize($_SESSION['user_id'], trim(strtolower($_GET['word'])), $_GET['is_correct']);
         break;
     case "next":
-        echo next_word(1);
+        echo next_word($_SESSION['user_id']);
         break;
     case "progress":
         if(isset($_GET['start_time']))
-            echo count_progress(1, $_GET['start_time']);
+            echo count_progress($_SESSION['user_id'], $_GET['start_time']);
+        break;
+    case "delete":
+        if(isset($_GET['word']))
+            delete_word($_SESSION['user_id'], trim(strtolower($_GET['word'])));
         break;
     default:
         echo "no qtype";
@@ -181,6 +185,26 @@ function new_word($user_id, $word) {
         $stmt->close();
     }
 
+    $mysqli->close();
+}
+
+function delete_word($user_id, $word) {
+    $mysqli = new mysqli(MYSQL_SERVER, MYSQL_USER, MYSQL_PSWD, MYSQL_DB);
+    if (mysqli_connect_errno())
+        die('Failed to connect to MySQL: ' . mysqli_connect_error());
+
+    $stmt = $mysqli->prepare('
+        DELETE FROM users_words
+        WHERE user_id = ? AND word = ?;
+    ');
+    $stmt->bind_param('is', $user_id, $word);
+    $stmt->execute();
+    if ($stmt->affected_rows == 1) {
+        new_log($user_id, 'delete', $word, '');
+    } else {
+        new_log($user_id, 'delete failed', $word, '');
+    }
+    $stmt->close();
     $mysqli->close();
 }
 

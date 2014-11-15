@@ -1,6 +1,11 @@
 var audioElement;
 
 $(document).ready(function() {
+    $(document).on('click', '.new_trash_click', function() {
+        $(this).parent().remove();
+        $.get('db.php?qtype=delete&word=' + $(this).siblings('span').text())
+    })
+
     audioElement = document.createElement('audio');
 
 	load_next_word();
@@ -83,6 +88,7 @@ function enter_new_word(new_word) {
     $('#txt_new_voc').val('');
     
     $.get('db.php?qtype=new&word=' + new_word, function() {
-        $('#new_voc_dia ul').prepend("<li>" + new_word + "</li>")
+        $('#new_voc_dia ul').prepend("<li><span>" + new_word + "</span><a class='new_trash_click' href='#'><img src='img/d1.png'/></a></li>");
+        if ($('#new_voc_dia ul').children().length == 4) $('#new_voc_dia li:last').remove();
     });
 }
