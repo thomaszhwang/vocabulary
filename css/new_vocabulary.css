@@ -2,22 +2,23 @@
     width:300px;
     height:200px;
     border-radius:4px;
-    background:#6d7083;
+    border:1px solid #fff;
     display:none;
     position:fixed;
-    top:40px;
+    top:77px;
     left:30px;
+
 }
 
 #new_voc_dia_tri{
     position:absolute;
-    top:-8px;
+    top:-14px;
     left:15px;
-    width:0;
-    border-top:12x solid transparent;
-    border-right:12px solid transparent;
-    border-bottom:12px solid #6d7083;
-    border-left:12px solid transparent;
+    width:10;
+    border-top:7px solid transparent;
+    border-right:7px solid transparent;
+    border-bottom:7px solid #fff;
+    border-left:7px solid transparent;
 }
 
 #new_voc_dia_close {
