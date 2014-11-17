@@ -18,19 +18,22 @@ if(!$u->isLoggedIn()) {
         <link type="text/css" rel="stylesheet" href="css/new_vocabulary.css"/>
     </head>
     <body>
+    <div id="containt">
         <div id="nav_left" class="nav_top">
             <ul>
                 <li><a href="#" onclick="$('#new_voc_dia').show();">New Vocabulary</a></li>
-                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Summary</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </div>
     
         <div id="nav_right" class="nav_top">
             <ul>
                 <li><a href="logout.php"><?PHP echo $_SESSION['user_display_name']; ?></a></li>
-                <li><a href="#">About</a></li>
+                
             </ul>
         </div>
+    </div>
     
         <div id="count-box">
             <div id="progress_correct_count"></div>
@@ -59,6 +62,6 @@ if(!$u->isLoggedIn()) {
                 placeholder=" type in new word and hit enter..."
                 onkeydown="if (event.keyCode ==  13) enter_new_word($('#txt_new_voc').val());">
             <ul></ul>
-        </div>
     </body>
+        </div>
 </html>

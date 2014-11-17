@@ -14,6 +14,7 @@ if(isset($_POST['submitted'])) {
 </head>
 
 <body>
+
     <?PHP
         echo $u->err_msg;
     ?>
