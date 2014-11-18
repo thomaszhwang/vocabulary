@@ -18,6 +18,7 @@ if(isset($_POST['submitted'])) {
     <?PHP
         echo $u->err_msg;
     ?>
+    <div id="logo-image"></div>
     <div id="login">
 
     <form method="post" action="login.php">
@@ -28,8 +29,6 @@ if(isset($_POST['submitted'])) {
         <input id="submit" type="submit" value="Log in" />
         
         <label>
-         <input id="remember_me" type="checkbox" name="remember_me"></input>
-            <p id="keep-box">Remember me on this computer…<p>
             <a class="style-f" href="">Forgot your password?</a>
             <a class="style-f" href="">Register</a>
         </label>
