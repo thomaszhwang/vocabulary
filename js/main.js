@@ -1,4 +1,5 @@
 var audioElement;
+var is_global_shortcuts_enabled;
 
 $(document).ready(function() {
     $(document).on('click', '.new_trash_click', function() {
@@ -6,29 +7,56 @@ $(document).ready(function() {
         $.get('db.php?qtype=delete&word=' + $(this).siblings('span').text())
     })
 
+    $(document).on('keydown', '#txt_new_voc', function(e) {
+        keys = {esc: 27};
+
+        var keyCode = e.keyCode;
+        switch (keyCode) {
+            case keys.esc:
+                $('#new_voc_dia').hide();
+                $("#txt_new_voc").val("");
+                break;
+        }
+    })
+
+    $('input[type="text"]').focusout(function() {
+        is_global_shortcuts_enabled = true;
+    })
+
+    $('input[type="text"]').focus(function() {
+        is_global_shortcuts_enabled = false;
+    })
+
     audioElement = document.createElement('audio');
+    is_global_shortcuts_enabled = true;
 
 	load_next_word();
 
 	$(document).keydown(function(e) {
-		arrow = {left: 37, up: 38, right: 39, down: 40};
-		var keyCode = e.keyCode;
-		switch (keyCode) {
-			case arrow.left:
-				$.get('db.php?qtype=memorize&word=' + $('#word_display_span').text() + '&is_correct=0');
-				load_next_word();
-				break;
-			case arrow.up:
-				window.open('http://dict.youdao.com/search?q=' + $('#word_display_span').text() + '&keyfrom=dict.index', '_blank');
-				break;
-			case arrow.right:
-				$.get('db.php?qtype=memorize&word=' + $('#word_display_span').text() + '&is_correct=1');
-				load_next_word();
-				break;
-			case arrow.down:
-                if (audioElement.src.length == 61) audioElement.play();
-				break;
-		}
+        if(is_global_shortcuts_enabled) {
+            keys = {left: 37, up: 38, right: 39, down: 40, n: 78};
+            var keyCode = e.keyCode;
+            switch (keyCode) {
+                case keys.left:
+                    $.get('db.php?qtype=memorize&word=' + $('#word_display_span').text() + '&is_correct=0');
+                    load_next_word();
+                    break;
+                case keys.up:
+                    window.open('http://dict.youdao.com/search?q=' + $('#word_display_span').text() + '&keyfrom=dict.index', '_blank');
+                    break;
+                case keys.right:
+                    $.get('db.php?qtype=memorize&word=' + $('#word_display_span').text() + '&is_correct=1');
+                    load_next_word();
+                    break;
+                case keys.down:
+                    if (audioElement.src.length == 61) audioElement.play();
+                    break;
+                case keys.n:
+                    $('#new_voc_dia').show();
+                    $("#txt_new_voc").focus();
+                    return false;
+            }
+        }
 	})
 
     $('#check_button').click(function(){
