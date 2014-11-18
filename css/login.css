@@ -14,14 +14,13 @@ body {
   width:150px;
   height:150px;
   border: 1px solid blue;
-  position: fixed;
+  margin: 0px 0px 0px -75px;
   top: 10%;
-  left: 36%;
-  margin-top: 10px;
-  margin-left: 100px;
-  
+  left: 50%;
+  position: absolute;
 
 }
+
 #login{
   width:400px;
   height:240px;
