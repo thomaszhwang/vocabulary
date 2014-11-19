@@ -10,14 +10,13 @@ if(isset($_POST['submitted'])) {
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"
+            charset="utf-8"></script>
+    <script src="js/login.js" charset="utf-8"></script>
     <link type="text/css" rel="stylesheet" href="css/login.css"/>
 </head>
 
 <body>
-
-    <?PHP
-        echo $u->err_msg;
-    ?>
     <div id="logo-image"></div>
     <div id="login">
 
